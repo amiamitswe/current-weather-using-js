@@ -1,0 +1,140 @@
+@font-face {
+  font-family: 'LexendDeca-Regular';
+  src: url("./fonts/LexendDeca-Regular/LexendDeca-Regular.eot?#iefix") format("embedded-opentype"), url("./fonts/LexendDeca-Regular/LexendDeca-Regular.woff") format("woff"), url("./fonts/LexendDeca-Regular/LexendDeca-Regular.ttf") format("truetype"), url("./fonts/LexendDeca-Regular/LexendDeca-Regular.svg#LexendDeca-Regular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: lightblue;
+  font-family: 'LexendDeca-Regular', Helvetica, Arial, sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.container {
+  width: 50%;
+  margin: 50px auto 0;
+}
+
+.container header {
+  padding: 30px;
+  background-color: whitesmoke;
+  -webkit-box-shadow: 0 0 10px gray;
+          box-shadow: 0 0 10px gray;
+  border-radius: 10px;
+}
+
+.container header h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 40px;
+  color: cadetblue;
+  text-shadow: 0 0 5px;
+}
+
+.container main {
+  margin: 30px auto 0;
+  height: 300px;
+}
+
+.container main .search-input {
+  text-align: center;
+}
+
+.container main .search-input label {
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-right: 30px;
+}
+
+.container main .search-input #city {
+  font-size: 20px;
+  padding: 10px 10px 10px 20px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  color: #0080ff;
+  margin-right: 30px;
+}
+
+.container main .search-input #click-me {
+  border: none;
+  height: 40px;
+  width: 80px;
+  border-radius: 10px;
+  font-size: 20px;
+  background-color: #0044ffab;
+  color: #fff;
+  border: 1px solid transparent;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.container main .search-input #click-me svg {
+  -webkit-transform: translate(2px, 4px);
+          transform: translate(2px, 4px);
+}
+
+.container main .search-input #click-me svg path {
+  fill: #fff;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.container main .search-input #click-me:hover {
+  background-color: #fff;
+  border: 1px solid #0080ff;
+  cursor: pointer;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #0080ff;
+}
+
+.container main .search-input #click-me:hover path {
+  fill: #0080ff;
+}
+
+.container main #load {
+  text-align: center;
+  margin: 25px auto;
+  display: none;
+}
+
+.container main .weather-result {
+  display: none;
+}
+
+.container main .weather-result .data {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 25px auto;
+}
+
+.container footer {
+  background-color: whitesmoke;
+  bottom: 50px;
+  border-radius: 5px;
+}
+
+.container footer p {
+  padding: 5px 0;
+  text-align: center;
+}
+
+.container footer p a {
+  text-decoration: none;
+}
+
+.container footer p a:hover {
+  text-decoration: underline;
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,134 @@
+@font-face {
+    font-family: 'LexendDeca-Regular';
+    src: url('./fonts/LexendDeca-Regular/LexendDeca-Regular.eot?#iefix') format('embedded-opentype'), url('./fonts/LexendDeca-Regular/LexendDeca-Regular.woff') format('woff'), url('./fonts/LexendDeca-Regular/LexendDeca-Regular.ttf') format('truetype'), url('./fonts/LexendDeca-Regular/LexendDeca-Regular.svg#LexendDeca-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: lightblue;
+    font-family: 'LexendDeca-Regular', Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 50%;
+    margin: 50px auto 0;
+
+    header {
+        padding: 30px;
+        background-color: whitesmoke;
+        box-shadow: 0 0 10px gray;
+        border-radius: 10px;
+
+        h1 {
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 40px;
+            color: cadetblue;
+            text-shadow: 0 0 5px;
+        }
+    }
+
+    main {
+
+        margin: 30px auto 0;
+        height: 300px;
+
+        .search-input {
+            text-align: center;
+
+            label {
+                font-size: 20px;
+                text-transform: uppercase;
+                margin-right: 30px;
+            }
+
+            #city {
+                font-size: 20px;
+                padding: 10px 10px 10px 20px;
+                ;
+                outline: none;
+                border: none;
+                border-radius: 10px;
+                color: #0080ff;
+                margin-right: 30px;
+            }
+
+            #click-me {
+                border: none;
+                height: 40px;
+                width: 80px;
+                border-radius: 10px;
+                font-size: 20px;
+                background-color: #0044ffab;
+                color: #fff;
+                border: 1px solid transparent;
+
+                svg {
+                    transform: translate(2px, 4px);
+
+                    path {
+                        fill: #fff;
+                        transition: all 0.2s;
+                    }
+                }
+
+                transition: all 0.2s;
+            }
+
+            #click-me:hover {
+                background-color: #fff;
+                border: 1px solid #0080ff;
+                cursor: pointer;
+                box-shadow: none;
+                color: #0080ff;
+
+                path {
+                    fill: #0080ff;
+                }
+            }
+        }
+
+        #load {
+            text-align: center;
+            margin: 25px auto;
+            display: none;
+        }
+
+        .weather-result {
+           display: none;
+
+            .data {
+                display: flex;
+                justify-content: space-around;
+                margin: 25px auto;
+            }
+        }
+
+    }
+
+    footer {
+        background-color: whitesmoke;
+        bottom: 50px;
+        border-radius: 5px;
+
+        p {
+            padding: 5px 0;
+            text-align: center;
+
+            a {
+                text-decoration: none;
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Current weather using JS</title>
+
+    <link rel="stylesheet" href="./style/main.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Current weather using row javascript</h1>
+        </header>
+
+        <main>
+            <section class="search-input">
+                <label for="city">Your City</label>
+                <input type="text" id="city" placeholder="Your City">
+                <button id="click-me">
+                    GO <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" height="20" width="20">
+                        <path
+                            d="M508.5 481.6l-129-129c-2.3-2.3-5.3-3.5-8.5-3.5h-10.3C395 312 416 262.5 416 208 416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c54.5 0 104-21 141.1-55.2V371c0 3.2 1.3 6.2 3.5 8.5l129 129c4.7 4.7 12.3 4.7 17 0l9.9-9.9c4.7-4.7 4.7-12.3 0-17zM208 384c-97.3 0-176-78.7-176-176S110.7 32 208 32s176 78.7 176 176-78.7 176-176 176z" />
+                    </svg>
+                </button>
+            </section>
+
+            <h3 id="load">Loading . . .</h3>
+
+            <section class="weather-result" id="weather-result">
+                <figure class="data">
+                    <div>
+                        <label for="city">Your Selected City</label>
+                        <h2 id="weatherCity">Dhaka</h2>
+                    </div>
+                    <div>
+                        <label for="description">Weather Descripthon</label>
+                        <h2 id="weatherDescripthon">Rain</h2>
+                    </div>
+                    <div>
+                        <label for="city">Current Temperature</label>
+                        <h2 id="weatherTemperature">80.20 F.</h2>
+                    </div>
+                </figure>
+
+                <figure class="data">
+                    <div>
+                        <label for="sunrise">Sunrise</label>
+                        <h2 id="sunrise">sunrise</h2>
+                    </div>
+                    <div>
+                        <label for="temp-rence">Temperature Between</label>
+                        <h2 id="temp-rence">55 to 89</h2>
+                    </div>
+                    <div>
+                        <label for="sunset">Sunset</label>
+                        <h2 id="sunset">sunset</h2>
+                    </div>
+                </figure>
+
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; design ny &#9734; <a href="#">amit</a> &#9734;</p>
+        </footer>
+    </div>
+
+
+
+    <script src="./js/init.js"></script>
+    <script src="./js/weather.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
