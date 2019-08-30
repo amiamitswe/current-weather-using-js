@@ -8,38 +8,35 @@ function searchWeather() {
     weaterResult.style.display = 'none';
 
     var cityName = searchCity.value.trim().toUpperCase();
+    var countryName = searchCountry.value.trim().toUpperCase();
+
     if (cityName.length === 0) {
         searchCity.value = '';
         return alert('Please give a city name');
     }
-    var http = new XMLHttpRequest();
-    var apiKey = '8b45a9c08a6d040b6c24a6ba39205398';
-    var url = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&units=metric&appid=' + apiKey;
-    var method = 'GET';
 
-    http.open(method, url);
+    if(countryName.length !== 0) {
 
-    http.onreadystatechange = function () {
-        if (http.readyState === XMLHttpRequest.DONE && http.status === 200) {
-            var data = JSON.parse(http.responseText);
-            var weatherData = new Weather(cityName, data.weather[0].description.toUpperCase(), data.sys.sunrise, data.sys.sunset );
-            weatherData.temperature = data.main.temp;
-
-            updateWeather(weatherData);
-        }
-
-        else if (http.readyState === XMLHttpRequest.DONE) {
-            alert('Something Wrong');
-        }
+        countriesAPI(countryName, cityName); 
+        return;
     }
 
-    http.send();
+    weatherAPI(cityName);
+    
+
+    
 }
 
 function updateWeather(weatherData) {
     weatherCity.textContent = weatherData.cityName;
+    cityInCountry.textContent = weatherData.cityInCountry;
     weatherDescripthon.textContent = weatherData.description;
+
     weatherTemperature.textContent = weatherData.temperature;
+    cFlag.innerHTML = "<img src=\"https://www.countryflags.io/"+weatherData.cityInCountry+"/flat/64.png\" >";
+    currentTime.textContent = weatherData.currentTime;
+
+    temp_rence.textContent = weatherData.lon_lat;
 
     sunrise.textContent = weatherData.sunrise;
     sunset.textContent = weatherData.sunset;
@@ -47,3 +44,4 @@ function updateWeather(weatherData) {
     loadingText.style.display = 'none';
     weaterResult.style.display = 'block';
 }
+

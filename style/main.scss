@@ -13,17 +13,19 @@
 body {
     background-color: lightblue;
     font-family: 'LexendDeca-Regular', Helvetica, Arial, sans-serif;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 .container {
     width: 50%;
-    margin: 50px auto 0;
+    margin: 10px auto 0;
 
     header {
-        padding: 30px;
+        padding: 20px;
         background-color: whitesmoke;
-        box-shadow: 0 0 10px gray;
+        -webkit-box-shadow: 0 0 10px gray;
+                box-shadow: 0 0 10px gray;
         border-radius: 10px;
 
         h1 {
@@ -37,8 +39,12 @@ body {
 
     main {
 
-        margin: 30px auto 0;
-        height: 300px;
+        margin: 15px auto;
+        border: 1px solid cornsilk;
+        padding: 15px 0;
+        text-align: center;
+
+        
 
         .search-input {
             text-align: center;
@@ -46,19 +52,22 @@ body {
             label {
                 font-size: 20px;
                 text-transform: uppercase;
-                margin-right: 30px;
             }
 
-            #city {
-                font-size: 20px;
-                padding: 10px 10px 10px 20px;
-                ;
-                outline: none;
-                border: none;
-                border-radius: 10px;
-                color: #0080ff;
-                margin-right: 30px;
+            .city-info {
+                margin: 20px 0;
+
+                input[type=text] {
+                    font-size: 20px;
+                    padding: 10px 10px 10px 20px;;
+                    outline: none;
+                    border: none;
+                    border-radius: 10px;
+                    color: #0080ff;
+                }
             }
+
+            
 
             #click-me {
                 border: none;
@@ -71,13 +80,21 @@ body {
                 border: 1px solid transparent;
 
                 svg {
-                    transform: translate(2px, 4px);
+                    -webkit-transform: translate(2px, 4px);
+                        -ms-transform: translate(2px, 4px);
+                            transform: translate(2px, 4px);
 
                     path {
                         fill: #fff;
+                        -webkit-transition: all 0.2s;
+                        -o-transition: all 0.2s;
                         transition: all 0.2s;
                     }
                 }
+
+                -webkit-transition: all 0.2s;
+
+                -o-transition: all 0.2s;
 
                 transition: all 0.2s;
             }
@@ -86,7 +103,8 @@ body {
                 background-color: #fff;
                 border: 1px solid #0080ff;
                 cursor: pointer;
-                box-shadow: none;
+                -webkit-box-shadow: none;
+                        box-shadow: none;
                 color: #0080ff;
 
                 path {
@@ -105,9 +123,12 @@ body {
            display: none;
 
             .data {
+                display: -webkit-box;
+                display: -ms-flexbox;
                 display: flex;
-                justify-content: space-around;
-                margin: 25px auto;
+                -ms-flex-pack: distribute;
+                    justify-content: space-around;
+                margin: 30px auto;
             }
         }
 
@@ -115,7 +136,7 @@ body {
 
     footer {
         background-color: whitesmoke;
-        bottom: 50px;
+        bottom: 10px;
         border-radius: 5px;
 
         p {

@@ -14,19 +14,19 @@ body {
   background-color: lightblue;
   font-family: 'LexendDeca-Regular', Helvetica, Arial, sans-serif;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .container {
   width: 50%;
-  margin: 50px auto 0;
+  margin: 10px auto 0;
 }
 
 .container header {
-  padding: 30px;
+  padding: 20px;
   background-color: whitesmoke;
   -webkit-box-shadow: 0 0 10px gray;
-          box-shadow: 0 0 10px gray;
+  box-shadow: 0 0 10px gray;
   border-radius: 10px;
 }
 
@@ -39,8 +39,10 @@ body {
 }
 
 .container main {
-  margin: 30px auto 0;
-  height: 300px;
+  margin: 15px auto;
+  border: 1px solid cornsilk;
+  padding: 15px 0;
+  text-align: center;
 }
 
 .container main .search-input {
@@ -50,17 +52,19 @@ body {
 .container main .search-input label {
   font-size: 20px;
   text-transform: uppercase;
-  margin-right: 30px;
 }
 
-.container main .search-input #city {
+.container main .search-input .city-info {
+  margin: 20px 0;
+}
+
+.container main .search-input .city-info input[type=text] {
   font-size: 20px;
   padding: 10px 10px 10px 20px;
   outline: none;
   border: none;
   border-radius: 10px;
   color: #0080ff;
-  margin-right: 30px;
 }
 
 .container main .search-input #click-me {
@@ -78,7 +82,7 @@ body {
 
 .container main .search-input #click-me svg {
   -webkit-transform: translate(2px, 4px);
-          transform: translate(2px, 4px);
+  transform: translate(2px, 4px);
 }
 
 .container main .search-input #click-me svg path {
@@ -92,7 +96,7 @@ body {
   border: 1px solid #0080ff;
   cursor: pointer;
   -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
   color: #0080ff;
 }
 
@@ -115,13 +119,13 @@ body {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
-  margin: 25px auto;
+  justify-content: space-around;
+  margin: 30px auto;
 }
 
 .container footer {
   background-color: whitesmoke;
-  bottom: 50px;
+  bottom: 10px;
   border-radius: 5px;
 }
 

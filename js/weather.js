@@ -1,13 +1,24 @@
 "use strict"
 
-function Weather(cityName, description, sunrise, sunset) {
+function Weather(cityName, cityInCountry, description, sunrise, sunset) {
     this.cityName = cityName;
+    this.cityInCountry = cityInCountry;
     this.description = description;
-    this.sunrise = Sunrise(sunrise);
-    this.sunset = Sunset(sunset);
+    this.sunrise = Sun_rise_set(sunrise);
+    this.sunset = Sun_rise_set(sunset);
 
+    this._cTime = '';
     this._temperature = '';
-    this._temp_rence = '';
+    this._lon = '';
+    this._lat = '';
+    this._lon_lat = '';
+
+    function Sun_rise_set(sun_rise_set) {
+        var msecond = sun_rise_set;
+        var time = new Date(msecond * 1000).toLocaleTimeString();
+    
+        return time;
+    }
 }
 
 Object.defineProperty(Weather.prototype, 'temperature', {
@@ -15,24 +26,53 @@ Object.defineProperty(Weather.prototype, 'temperature', {
         return this._temperature;
     },
     set: function(value) {
-        this._temperature = (value * 1.8 + 32).toFixed(2) + 'F.';
+        this._temperature = value.toFixed(2)+ ' ℃';
+
+        // (value * 1.8 + 32).toFixed(2) + 'F.'
     }
-})
+});
 
-function Sunrise(sunrise) {
-    var time = new Date();
-    var hour = time.getHours(sunrise);
-    var minute = time.getMinutes(sunrise);
-    var second = time.getSeconds(sunrise);
+Object.defineProperty(Weather.prototype, 'lon', {
+    get: function() {
+        return this._lon;
+    },
+    set: function(lon) {
+        this._lon = lon;
+    }
+});
 
-    return hour +' : ' +minute+' : '+second;
+Object.defineProperty(Weather.prototype, 'lat', {
+    get: function() {
+        return this._lat;
+    },
+    set: function(lat) {
+        this._lat = lat;
+    }
+});
+
+
+Object.defineProperty(Weather.prototype, 'lon_lat', {
+    get: function() {
+        return this._lon_lat = 'Lon '+this._lon + ' ― Lat '+this._lat;
+    },
+    set: function(lataa) {
+        this._lat = lataa;
+    }
+});
+
+Object.defineProperty(Weather.prototype, 'currentTime', {
+    get: function() { 
+        return this._cTime =new Date().toLocaleTimeString();
+    },
+    set: function(ddd) {
+        this._cTime = ddd;
+    }
+});
+//---------------------------------------------------------------------------------------------
+// country data
+
+function Country(cityInCountry,cityName) {
+    this.cityInCountry = cityInCountry;
+    this.cityName= cityName;
 }
 
-function Sunset(sunset) {
-    var time = new Date();
-    var hour = time.getHours(sunset);
-    var minute = time.getMinutes(sunset);
-    var second = time.getSeconds(sunset);
-
-    return hour +' : ' +minute+' : '+second;
-}
