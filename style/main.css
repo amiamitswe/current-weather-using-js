@@ -18,7 +18,7 @@ body {
 }
 
 .container {
-  width: 50%;
+  width: 60%;
   margin: 10px auto 0;
 }
 
@@ -69,13 +69,14 @@ body {
 
 .container main .search-input #click-me {
   border: none;
-  height: 40px;
-  width: 80px;
   border-radius: 10px;
   font-size: 20px;
   background-color: #0044ffab;
   color: #fff;
   border: 1px solid transparent;
+  outline: none;
+  padding: 10px;
+  text-transform: uppercase;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
@@ -110,6 +111,13 @@ body {
   display: none;
 }
 
+.container main #error_image {
+  height: 200px;
+  width: 200px;
+  margin: 30px auto 10px;
+  display: none;
+}
+
 .container main .weather-result {
   display: none;
 }
@@ -121,6 +129,10 @@ body {
   -ms-flex-pack: distribute;
   justify-content: space-around;
   margin: 30px auto;
+}
+
+.container main .weather-result .last-data {
+  margin-bottom: 0px;
 }
 
 .container footer {
@@ -140,5 +152,35 @@ body {
 
 .container footer p a:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 1000px) {
+  .container {
+    width: 80%;
+  }
+}
+
+@media (max-width: 710px) {
+  .container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 630px) {
+  .container main .city-info #city {
+    margin-bottom: 10px;
+  }
+  .container main .weather-result .data {
+    display: initial;
+  }
+  .container main .weather-result .data div {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 320px) {
+  .container header h1 {
+    font-size: 30px;
+  }
 }
 /*# sourceMappingURL=main.css.map */

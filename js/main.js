@@ -6,25 +6,25 @@ function searchWeather() {
 
     loadingText.style.display = 'block';
     weaterResult.style.display = 'none';
+    error_image.style.display = 'none';
 
     var cityName = searchCity.value.trim().toUpperCase();
     var countryName = searchCountry.value.trim().toUpperCase();
 
     if (cityName.length === 0) {
         searchCity.value = '';
-        return alert('Please give a city name');
+        loadingText.style.display = 'none';
+        alertMsg = 'Please give a city name';
+        return alertMessag(alertMsg);
     }
 
-    if(countryName.length !== 0) {
+    if (countryName.length !== 0) {
 
-        countriesAPI(countryName, cityName); 
+        countriesAPI(countryName, cityName);
         return;
     }
 
     weatherAPI(cityName);
-    
-
-    
 }
 
 function updateWeather(weatherData) {
@@ -33,7 +33,7 @@ function updateWeather(weatherData) {
     weatherDescripthon.textContent = weatherData.description;
 
     weatherTemperature.textContent = weatherData.temperature;
-    cFlag.innerHTML = "<img src=\"https://www.countryflags.io/"+weatherData.cityInCountry+"/flat/64.png\" >";
+    cFlag.innerHTML = "<img src=\"https://www.countryflags.io/" + weatherData.cityInCountry + "/flat/64.png\" >";
     currentTime.textContent = weatherData.currentTime;
 
     temp_rence.textContent = weatherData.lon_lat;
@@ -42,6 +42,7 @@ function updateWeather(weatherData) {
     sunset.textContent = weatherData.sunset;
 
     loadingText.style.display = 'none';
+    error_image.style.display = 'none';
     weaterResult.style.display = 'block';
 }
 
