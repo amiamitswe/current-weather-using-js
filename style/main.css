@@ -167,6 +167,9 @@ body {
 }
 
 @media (max-width: 630px) {
+  .container header h1 {
+    font-size: 30px;
+  }
   .container main .city-info #city {
     margin-bottom: 10px;
   }
@@ -179,8 +182,8 @@ body {
 }
 
 @media (max-width: 320px) {
-  .container header h1 {
-    font-size: 30px;
+  .container main .city-info input[type=text] {
+    width: 80%;
   }
 }
 /*# sourceMappingURL=main.css.map */

@@ -57,7 +57,6 @@ body {
                 input[type=text] {
                     font-size: 20px;
                     padding: 10px 10px 10px 20px;
-                    ;
                     outline: none;
                     border: none;
                     border-radius: 10px;
@@ -174,6 +173,12 @@ body {
 
 @media (max-width: 630px) {
     .container {
+        header {
+            h1 {
+                font-size: 30px;
+            }
+        }
+
         main {
             .city-info {
                 #city {
@@ -196,9 +201,11 @@ body {
 
 @media (max-width: 320px) {
     .container {
-        header {
-            h1 {
-                font-size: 30px;
+        main {
+            .city-info {
+                input[type = text] {
+                    width: 80%;
+                }
             }
         }
     }

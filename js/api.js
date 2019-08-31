@@ -40,8 +40,30 @@ function countriesAPI(countryName, scarch_location) {
 function weatherAPI(scarch_location) {
     var http = new XMLHttpRequest();
     var apiKey = '8b45a9c08a6d040b6c24a6ba39205398';
-    // scarch_location + ',' + 'bd' 
+    // // scarch_location + ',' + 'bd' 
     var url = 'https://api.openweathermap.org/data/2.5/weather?q=' + scarch_location + '&units=metric&appid=' + apiKey;
+
+    /* test perpus 
+    fetch(url)
+        .then(response => response.json()
+            .then(data => {
+                var weatherData = new Weather(
+                    scarch_location,
+                    data.sys.country,
+                    data.weather[0].description.toUpperCase(),
+                    data.sys.sunrise,
+                    data.sys.sunset
+                );
+                weatherData.temperature = data.main.temp;
+                weatherData.lon = data.coord.lon;
+                weatherData.lat = data.coord.lat;
+
+                updateWeather(weatherData);
+
+                console.log('data render successfully');
+            }));
+
+            */
 
     var method = 'GET';
 
@@ -50,7 +72,13 @@ function weatherAPI(scarch_location) {
     http.onreadystatechange = function () {
         if (http.readyState === XMLHttpRequest.DONE && http.status === 200) {
             var data = JSON.parse(http.responseText);
-            var weatherData = new Weather(scarch_location, data.sys.country, data.weather[0].description.toUpperCase(), data.sys.sunrise, data.sys.sunset);
+            var weatherData = new Weather(
+                scarch_location,
+                data.sys.country,
+                data.weather[0].description.toUpperCase(),
+                data.sys.sunrise,
+                data.sys.sunset
+            );
             weatherData.temperature = data.main.temp;
             weatherData.lon = data.coord.lon;
             weatherData.lat = data.coord.lat;
