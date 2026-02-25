@@ -33,7 +33,10 @@ function updateWeather(weatherData) {
     weatherDescripthon.textContent = weatherData.description;
 
     weatherTemperature.textContent = weatherData.temperature;
-    cFlag.innerHTML = "<img src=\"https://www.countryflags.io/" + weatherData.cityInCountry + "/flat/64.png\" >";
+    // cFlag.innerHTML = "<img src=\"https://www.countryflags.io/" + weatherData.cityInCountry + "/flat/64.png\" >";
+    cFlag.innerHTML = "<img src=\"flagcdn.com/160x120/" + weatherData.cityInCountry + ".png\" >";
+    https://flagcdn.com/160x120/bd.png
+    
     currentTime.textContent = weatherData.currentTime;
 
     temp_rence.textContent = weatherData.lon_lat;
